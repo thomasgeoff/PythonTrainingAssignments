@@ -66,8 +66,6 @@ if __name__ == "__main__":
     
     continue_flag = input("Do you want to continue[y/n]:")
     
-    
-
 #Q3.Write a program in Python to implement the given flowchart:
 #ANSWER:	
 def flowchart():
@@ -107,13 +105,10 @@ def break_continue():
   
   while True:
     number = int(input("Enter the first number:"))
-    
     if number > 0:
       print("Good Going")
       continue
-    
-    break
-    
+    break 
   print("It's Over")
 #invoke the function 
 break_continue() 
