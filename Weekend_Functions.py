@@ -15,7 +15,7 @@ reverse_string("1234abcd")
 # No. of Lower case Characters : 12
 #ANSWER:
 def upper_lower_frequency(st):
-  alpha = "abcdefghijklmnopqrstuvxyz"
+  alpha = "abcdefghijklmnopqrstuvwxyz"
   upper_count,lower_count = 0,0
   for char in st:
     if char in alpha:
