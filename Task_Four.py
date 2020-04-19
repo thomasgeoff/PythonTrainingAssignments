@@ -91,4 +91,4 @@ to_be_decorated_again()
 5. Django - used by Instagram, Pinterest, Udemy, Coursera, Robinhood
 # Reference:
 # https://dev.to/duomly/the-best-front-end-framework-to-learn-in-2019-dn7
-# https://hotframeworks.com/frameworks/ruby-on-rails
+# https://hotframeworks.com/frameworks
