@@ -23,18 +23,20 @@ class PostForm(CreateView):
     model = Post
     template_name = 'BLOG_POSTS/POST_FORM.html'
     fields = '__all__'
+    success_url = reverse_lazy('dashboard')
 
 
 class PostEdit(UpdateView):
     model = Post
     template_name = 'BLOG_POSTS/POST_EDIT.html'
     fields = ['title', 'body']
+    success_url = reverse_lazy('dashboard')
 
 
 class PostDelete(DeleteView):
     model = Post
     template_name = 'BLOG_POSTS/POST_DELETE.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('dashboard')
 
 
 def new_post(request):

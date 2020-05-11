@@ -7,10 +7,11 @@ from django.urls import reverse
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.CharField(max_length=255)
     body = models.TextField(blank=True)
-    #post_date = models.DateTimeField(default=datetime.now, blank=True)
-    #photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')
+    post_date = models.DateTimeField(default=datetime.now, blank=True)
+    user_id = models.IntegerField(blank=True)
+    # photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')
 
     def __str__(self):
         return self.title

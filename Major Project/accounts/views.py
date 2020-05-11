@@ -7,6 +7,8 @@ from BLOG_POSTS.models import Post
 # Create your views here.
 def register(request):
     if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
         username = request.POST['username']
         email = request.POST['email']
         address = request.POST['address']
@@ -23,7 +25,7 @@ def register(request):
                     messages.error(request, 'That email is being used')
                     return redirect('register')
                 else:
-                    user = User.objects.create_user(username=username, password=password, email=email, address=address)
+                    user = User.objects.create_user(username=username, password=password,email=email, first_name=first_name, last_name=last_name, address=address)
                     user.save()
                     messages.success(request, 'You are now registered and cal login')
                     return redirect('login')
@@ -49,7 +51,7 @@ def login(request):
             messages.error(request, 'Invalid Credentials')
             return redirect('login')
     else:
-        return render('accounts/login.html')
+        return render(request, 'accounts/login.html')
 
 
 def logout(request):
@@ -60,8 +62,9 @@ def logout(request):
 
 
 def dashboard(request):
-    user_posts = Post.objects.order_by('-post_date').filter(user_id=request.user_id)
+    # user_posts = Post.objects.order_by('-post_date').filter(user_id=request.user_id)
 
+    user_posts = Post.objects.order_by('-post_date').filter(user_id=request.user.id)
     context = {
         'posts': user_posts
     }
